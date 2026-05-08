@@ -8,16 +8,18 @@ A text-based rap battle game that lives entirely inside AI skill files. Play in 
 
 ### In Cursor
 
-Open a chat and say any of these:
+Add the `rap-battle/` directory to your project, then open a chat and say any of these:
 - "Let's rap battle"
 - "Start a rap battle"
 - "I want to spit bars"
 
-The game skill triggers automatically and walks you through everything.
+Cursor picks up `rap-battle/SKILL.md` as a skill and triggers the game automatically.
 
 ### In Claude
 
-Copy the contents of `.cursor/skills/rap-battle-game/SKILL.md` into a Claude project's system prompt or paste it at the start of a conversation. Reference the round and judge skills as needed.
+1. Create a Claude project.
+2. Paste the contents of `rap-battle/SKILL.md` into the project's system prompt (or at the start of a conversation).
+3. Also paste (or attach) the round skills (`rap-battle/round-1/SKILL.md` through `rap-battle/round-5/SKILL.md`) and the judge (`rap-battle/judge/SKILL.md`) so the model can reference them when running a round or scoring.
 
 ## The Game
 
@@ -28,22 +30,22 @@ Copy the contents of `.cursor/skills/rap-battle-game/SKILL.md` into a Claude pro
 5. **Get judged** on Bars, Flow, Personals, Performance, and Rebuttal
 6. **Win to advance** -- lose and you can rematch or walk away
 
-## Skill Architecture
+## Structure
 
 ```
-.cursor/skills/
-├── rap-battle-game/SKILL.md      ← Main launcher & orchestrator
-├── rap-battle-judge/SKILL.md     ← Scoring rubric & evaluation
-├── rap-battle-round-1/SKILL.md   ← Level 1: Sloppy
-├── rap-battle-round-2/SKILL.md   ← Level 2: Amateur
-├── rap-battle-round-3/SKILL.md   ← Level 3: Intermediate
-├── rap-battle-round-4/SKILL.md   ← Level 4: Advanced
-└── rap-battle-round-5/SKILL.md   ← Level 5: Expert
+rap-battle/
+├── SKILL.md          ← Orchestrator (game launcher & flow control)
+├── judge/SKILL.md    ← Scoring rubric & evaluation
+├── round-1/SKILL.md  ← Level 1: Sloppy
+├── round-2/SKILL.md  ← Level 2: Amateur
+├── round-3/SKILL.md  ← Level 3: Intermediate
+├── round-4/SKILL.md  ← Level 4: Advanced
+└── round-5/SKILL.md  ← Level 5: Expert
 ```
 
-### Why Skills?
+### Why Markdown Files?
 
-Each round is a standalone skill file you can read, study, and learn from. Want to know how the Expert opponent constructs bars? Read Round 5's skill. Want to understand what the judge values? Read the judge skill. The game is transparent by design -- study the system, improve your craft.
+Each round is a standalone instruction file you can read, study, and learn from. Want to know how the Expert opponent constructs bars? Read `round-5/SKILL.md`. Want to understand what the judge values? Read `judge/SKILL.md`. The game is transparent by design -- study the system, improve your craft.
 
 ## Judging Criteria
 
