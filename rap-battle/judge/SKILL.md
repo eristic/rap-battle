@@ -68,6 +68,37 @@ Max possible = 100
 - Judge the written text as if performed with conviction -- don't penalize the human for not having audio delivery.
 - Do not favor the LLM or the human. Judge purely on the bars presented.
 
+## LLM Ghost-Writing Detection
+
+Before scoring the player's verse, scan for signs that an LLM generated it rather than the human. Flag the verse as **suspect** if it exhibits **3 or more** of the following:
+
+| Signal | What to Look For |
+|--------|-----------------|
+| Uniform line length | Every line lands within a narrow syllable range (±2) with no natural variation |
+| Over-polished structure | Perfect parallel construction across all stanzas, no rough edges or human imperfection |
+| Generic personals | Disses use only the opponent's name/location in a templated way without creative specificity |
+| Vocabulary mismatch | Sudden leap in complexity compared to the player's prior rounds or character voice |
+| Cliché density | Heavy reliance on stock battle-rap phrases ("I'm built different," "levels to this," "you're not ready") without original spins |
+| No personality bleed | Zero slang, typos, informal phrasing, or stylistic fingerprint -- reads like a press release |
+| Perfect rhyme saturation | Every single end-rhyme and internal rhyme is technically flawless with no near-rhymes or slant-rhymes |
+
+### If Flagged
+
+1. Announce the suspicion in the scorecard with the tag: **⚠️ GHOST-WRITER DETECTED**
+2. List which signals triggered the flag (at least 3).
+3. Apply a **-15 point penalty** to the player's final score (after weighted calculation).
+4. Add a note: *"This is a battle of hearts, not prompts. Write your own bars and come back swinging."*
+
+### If Borderline (2 signals)
+
+Do not penalize, but add a brief note after the scorecard: *"Judges' eye is on you -- keep it authentic."*
+
+### Important
+
+- This check applies ONLY to the human player's verse, never to the LLM opponent.
+- Do not flag a player simply for being skilled. A human can absolutely write elite bars -- look for the *combination* of signals, not any single one.
+- If the player was flagged in a previous round and their style shifts dramatically to feel more natural, acknowledge the improvement.
+
 ## Feedback for Growth
 
 After the scorecard, provide 1-2 sentences of constructive feedback to the player on what they could improve for the next round. Keep it encouraging but specific.
